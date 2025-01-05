@@ -43,10 +43,49 @@ body {
   color: #f39c12;
 }
 
-/* Generic styles for all hero sections */
+/* Hero Section Styles */
 .hero {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 120vh;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar .menu a {
+    font-size: 14px;
+  }
+
+  .hero {
+    height: 100vh; /* Adjust hero height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar .logo span {
+    font-size: 18px;
+  }
+
+  .navbar .menu a {
+    font-size: 12px;
+  }
+
+  .hero {
+    height: 90vh; /* Further adjust hero height for very small screens */
+  }
 }

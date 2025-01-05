@@ -1,6 +1,14 @@
+/* Resetting global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  line-height: 1; /* Reset line-height to avoid extra spacing */
 }
 
 .navbar {
@@ -43,14 +51,23 @@ body {
   color: #f39c12;
 }
 
-/* Hero Section using Aspect Ratio */
+/* Hero Section with Responsive Background */
 .hero {
   position: relative;
   width: 100%;
+  height: auto; /* Ensure height is calculated based on width and aspect ratio */
   aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
-  background-size: cover;
-  background-position: center;
+  background-size: cover; /* Cover ensures the background fills the element */
+  background-position: center; /* Center the background image */
   background-repeat: no-repeat;
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+  display: block; /* Ensure hero sections are block-level elements */
+}
+
+/* Remove spacing between sections */
+.hero + .hero {
+  margin: 0; /* Ensure no space between consecutive hero sections */
 }
 
 /* Responsive Styles */
@@ -73,6 +90,8 @@ body {
 
   .hero {
     aspect-ratio: 4 / 3; /* Change to a 4:3 ratio for smaller screens */
+    background-size: contain; /* Ensure the entire image is visible */
+    background-position: top center; /* Adjust positioning for better visibility */
   }
 }
 
@@ -92,5 +111,7 @@ body {
 
   .hero {
     aspect-ratio: 1 / 1; /* Square aspect ratio for very small screens */
+    background-size: contain; /* Ensure the entire image is visible */
+    background-position: center center; /* Center the image for better fit */
   }
 }

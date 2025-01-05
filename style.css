@@ -43,32 +43,36 @@ body {
   color: #f39c12;
 }
 
-/* Hero Section Styles */
+/* Hero Section using Aspect Ratio */
 .hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 120vh;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
+    flex-direction: column; /* Stack navbar items vertically */
     align-items: flex-start;
+    padding: 15px;
   }
 
   .navbar .menu {
-    flex-direction: column;
+    width: 100%; /* Full-width menu for smaller screens */
+    flex-direction: column; /* Stack menu items */
     gap: 10px;
   }
 
   .navbar .menu a {
-    font-size: 14px;
+    font-size: 14px; /* Slightly smaller font size */
   }
 
   .hero {
-    height: 100vh; /* Adjust hero height for smaller screens */
+    aspect-ratio: 4 / 3; /* Change to a 4:3 ratio for smaller screens */
   }
 }
 
@@ -78,14 +82,15 @@ body {
   }
 
   .navbar .logo span {
-    font-size: 18px;
+    font-size: 18px; /* Smaller logo text */
   }
 
   .navbar .menu a {
-    font-size: 12px;
+    font-size: 12px; /* Smaller font size for links */
+    padding: 5px 0; /* Add some padding */
   }
 
   .hero {
-    height: 90vh; /* Further adjust hero height for very small screens */
+    aspect-ratio: 1 / 1; /* Square aspect ratio for very small screens */
   }
 }
